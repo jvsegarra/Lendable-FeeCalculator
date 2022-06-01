@@ -1,22 +1,22 @@
 package calculator
 
 import breakpoints.BreakpointsList
-import converters.ValueConverter
 import model.LoanApplication
+import java.math.BigDecimal
 
 
 interface FeeCalculator {
-    fun calculate(loanApplication: LoanApplication): Float
+    fun calculate(loanApplication: LoanApplication): BigDecimal
 }
 
 class InterpolatedFeeCalculator(
     private val breakpointsList: BreakpointsList,
-    private val valueConverter: ValueConverter
+    private val convertValue: (value: BigDecimal) -> BigDecimal
 ) : FeeCalculator {
-    override fun calculate(loanApplication: LoanApplication): Float {
-        val breakpoint = breakpointsList.containsMatchingLoanApplication(loanApplication)
-        breakpoint?.let {
-            return valueConverter.convert(breakpoint.fee)
+    override fun calculate(loanApplication: LoanApplication): BigDecimal {
+        val matchingBreakpoint = breakpointsList.getMatchingBreakpoint(loanApplication)
+        matchingBreakpoint?.let {
+            return convertValue(matchingBreakpoint.fee)
         }
 
         val boundingBreakpoints = breakpointsList.fetchBoundingBreakpoints(loanApplication)
@@ -27,6 +27,6 @@ class InterpolatedFeeCalculator(
             boundingBreakpoints.second
         )
 
-        return valueConverter.convert(fee)
+        return convertValue(fee)
     }
 }

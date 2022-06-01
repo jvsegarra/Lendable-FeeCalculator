@@ -2,11 +2,12 @@ package breakpoints
 
 import exceptions.AmountNotInRangeException
 import model.LoanApplication
+import java.math.BigDecimal
 
-data class Breakpoint(val amount: Float, val term: Int, val fee: Float)
+data class Breakpoint(val amount: BigDecimal, val term: Int, val fee: BigDecimal)
 
 data class BreakpointsList(val breakpoints: List<Breakpoint>) {
-    fun containsMatchingLoanApplication(loanApplication: LoanApplication): Breakpoint? =
+    fun getMatchingBreakpoint(loanApplication: LoanApplication): Breakpoint? =
         breakpoints.firstOrNull { breakpoint -> breakpoint.amount == loanApplication.amount && breakpoint.term == loanApplication.term }
 
     fun fetchBoundingBreakpoints(loanApplication: LoanApplication): Pair<Breakpoint, Breakpoint> {
@@ -18,7 +19,7 @@ data class BreakpointsList(val breakpoints: List<Breakpoint>) {
         return Pair(breakpoints[indexOfFirstBiggerFee - 1], breakpoints[indexOfFirstBiggerFee])
     }
 
-    private fun checkAmountIsWithinRange(amount: Float) {
+    private fun checkAmountIsWithinRange(amount: BigDecimal) {
         val breakpointsLowerValue = breakpoints.first().amount
         val breakpointsUpperAmount = breakpoints.last().amount
 

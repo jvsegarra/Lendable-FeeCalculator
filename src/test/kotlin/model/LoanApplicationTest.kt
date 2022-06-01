@@ -3,6 +3,7 @@ package model
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.inspectors.forAll
+import java.math.BigDecimal
 
 class LoanApplicationTest : FunSpec() {
     init {
@@ -12,7 +13,7 @@ class LoanApplicationTest : FunSpec() {
 
             // When - Then
             listOfValidValues.forAll { term ->
-                LoanApplication(1000F, term)
+                LoanApplication(BigDecimal(1000), term)
             }
         }
 
@@ -22,7 +23,7 @@ class LoanApplicationTest : FunSpec() {
 
             // When - Then
             shouldThrow<IllegalArgumentException> {
-                LoanApplication(1000f, invalidTerm)
+                LoanApplication(BigDecimal(1000), invalidTerm)
             }
         }
     }

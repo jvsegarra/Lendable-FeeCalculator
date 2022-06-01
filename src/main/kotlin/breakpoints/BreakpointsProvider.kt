@@ -1,5 +1,7 @@
 package breakpoints
 
+import java.math.BigDecimal
+
 interface BreakpointsProvider {
     fun getBreakpointsList(): BreakpointsList
 }
@@ -8,46 +10,46 @@ class BreakpointsListProvider : BreakpointsProvider {
     override fun getBreakpointsList(): BreakpointsList {
         return BreakpointsList(
             listOf(
-                Breakpoint(amount = 1000F, term = 12, fee = 50F),
-                Breakpoint(amount = 2000F, term = 12, fee = 90F),
-                Breakpoint(amount = 3000F, term = 12, fee = 90F),
-                Breakpoint(amount = 4000F, term = 12, fee = 115F),
-                Breakpoint(amount = 5000F, term = 12, fee = 100F),
-                Breakpoint(amount = 6000F, term = 12, fee = 120F),
-                Breakpoint(amount = 7000F, term = 12, fee = 140F),
-                Breakpoint(amount = 8000F, term = 12, fee = 160F),
-                Breakpoint(amount = 9000F, term = 12, fee = 180F),
-                Breakpoint(amount = 10000F, term = 12, fee = 200F),
-                Breakpoint(amount = 11000F, term = 12, fee = 220F),
-                Breakpoint(amount = 12000F, term = 12, fee = 240F),
-                Breakpoint(amount = 13000F, term = 12, fee = 260F),
-                Breakpoint(amount = 14000F, term = 12, fee = 280F),
-                Breakpoint(amount = 15000F, term = 12, fee = 300F),
-                Breakpoint(amount = 16000F, term = 12, fee = 320F),
-                Breakpoint(amount = 17000F, term = 12, fee = 340F),
-                Breakpoint(amount = 18000F, term = 12, fee = 360F),
-                Breakpoint(amount = 19000F, term = 12, fee = 380F),
-                Breakpoint(amount = 20000F, term = 12, fee = 400F),
-                Breakpoint(amount = 1000F, term = 24, fee = 70F),
-                Breakpoint(amount = 2000F, term = 24, fee = 100F),
-                Breakpoint(amount = 3000F, term = 24, fee = 120F),
-                Breakpoint(amount = 4000F, term = 24, fee = 160F),
-                Breakpoint(amount = 5000F, term = 24, fee = 200F),
-                Breakpoint(amount = 6000F, term = 24, fee = 240F),
-                Breakpoint(amount = 7000F, term = 24, fee = 280F),
-                Breakpoint(amount = 8000F, term = 24, fee = 320F),
-                Breakpoint(amount = 9000F, term = 24, fee = 360F),
-                Breakpoint(amount = 10000F, term = 24, fee = 400F),
-                Breakpoint(amount = 11000F, term = 24, fee = 440F),
-                Breakpoint(amount = 12000F, term = 24, fee = 480F),
-                Breakpoint(amount = 13000F, term = 24, fee = 520F),
-                Breakpoint(amount = 14000F, term = 24, fee = 560F),
-                Breakpoint(amount = 15000F, term = 24, fee = 600F),
-                Breakpoint(amount = 16000F, term = 24, fee = 640F),
-                Breakpoint(amount = 17000F, term = 24, fee = 680F),
-                Breakpoint(amount = 18000F, term = 24, fee = 720F),
-                Breakpoint(amount = 19000F, term = 24, fee = 760F),
-                Breakpoint(amount = 20000F, term = 24, fee = 800F),
+                Breakpoint(amount = BigDecimal(1000), term = 12, fee = BigDecimal(50)),
+                Breakpoint(amount = BigDecimal(2000), term = 12, fee = BigDecimal(90)),
+                Breakpoint(amount = BigDecimal(3000), term = 12, fee = BigDecimal(90)),
+                Breakpoint(amount = BigDecimal(4000), term = 12, fee = BigDecimal(115)),
+                Breakpoint(amount = BigDecimal(5000), term = 12, fee = BigDecimal(100)),
+                Breakpoint(amount = BigDecimal(6000), term = 12, fee = BigDecimal(120)),
+                Breakpoint(amount = BigDecimal(7000), term = 12, fee = BigDecimal(140)),
+                Breakpoint(amount = BigDecimal(8000), term = 12, fee = BigDecimal(160)),
+                Breakpoint(amount = BigDecimal(9000), term = 12, fee = BigDecimal(180)),
+                Breakpoint(amount = BigDecimal(10000), term = 12, fee = BigDecimal(200)),
+                Breakpoint(amount = BigDecimal(11000), term = 12, fee = BigDecimal(220)),
+                Breakpoint(amount = BigDecimal(12000), term = 12, fee = BigDecimal(240)),
+                Breakpoint(amount = BigDecimal(13000), term = 12, fee = BigDecimal(260)),
+                Breakpoint(amount = BigDecimal(14000), term = 12, fee = BigDecimal(280)),
+                Breakpoint(amount = BigDecimal(15000), term = 12, fee = BigDecimal(300)),
+                Breakpoint(amount = BigDecimal(16000), term = 12, fee = BigDecimal(320)),
+                Breakpoint(amount = BigDecimal(17000), term = 12, fee = BigDecimal(340)),
+                Breakpoint(amount = BigDecimal(18000), term = 12, fee = BigDecimal(360)),
+                Breakpoint(amount = BigDecimal(19000), term = 12, fee = BigDecimal(380)),
+                Breakpoint(amount = BigDecimal(20000), term = 12, fee = BigDecimal(400)),
+                Breakpoint(amount = BigDecimal(1000), term = 24, fee = BigDecimal(70)),
+                Breakpoint(amount = BigDecimal(2000), term = 24, fee = BigDecimal(100)),
+                Breakpoint(amount = BigDecimal(3000), term = 24, fee = BigDecimal(120)),
+                Breakpoint(amount = BigDecimal(4000), term = 24, fee = BigDecimal(160)),
+                Breakpoint(amount = BigDecimal(5000), term = 24, fee = BigDecimal(200)),
+                Breakpoint(amount = BigDecimal(6000), term = 24, fee = BigDecimal(240)),
+                Breakpoint(amount = BigDecimal(7000), term = 24, fee = BigDecimal(280)),
+                Breakpoint(amount = BigDecimal(8000), term = 24, fee = BigDecimal(320)),
+                Breakpoint(amount = BigDecimal(9000), term = 24, fee = BigDecimal(360)),
+                Breakpoint(amount = BigDecimal(10000), term = 24, fee = BigDecimal(400)),
+                Breakpoint(amount = BigDecimal(11000), term = 24, fee = BigDecimal(440)),
+                Breakpoint(amount = BigDecimal(12000), term = 24, fee = BigDecimal(480)),
+                Breakpoint(amount = BigDecimal(13000), term = 24, fee = BigDecimal(520)),
+                Breakpoint(amount = BigDecimal(14000), term = 24, fee = BigDecimal(560)),
+                Breakpoint(amount = BigDecimal(15000), term = 24, fee = BigDecimal(600)),
+                Breakpoint(amount = BigDecimal(16000), term = 24, fee = BigDecimal(640)),
+                Breakpoint(amount = BigDecimal(17000), term = 24, fee = BigDecimal(680)),
+                Breakpoint(amount = BigDecimal(18000), term = 24, fee = BigDecimal(720)),
+                Breakpoint(amount = BigDecimal(19000), term = 24, fee = BigDecimal(760)),
+                Breakpoint(amount = BigDecimal(20000), term = 24, fee = BigDecimal(800)),
             )
         )
     }
@@ -58,8 +60,8 @@ class BreakpointsJsonProvider : BreakpointsProvider {
         // This would have injected a file reader and return a BreakpointsList from a json file
         return BreakpointsList(
             listOf(
-                Breakpoint(amount = 1000F, term = 12, fee = 50F),
-                Breakpoint(amount = 1000F, term = 24, fee = 50F),
+                Breakpoint(amount = BigDecimal(1000), term = 12, fee = BigDecimal(50)),
+                Breakpoint(amount = BigDecimal(1000), term = 24, fee = BigDecimal(50)),
             )
         )
     }

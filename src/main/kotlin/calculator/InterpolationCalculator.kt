@@ -1,13 +1,14 @@
 package calculator
 
 import breakpoints.Breakpoint
+import java.math.BigDecimal
 
 object InterpolationCalculator {
     fun calculateInterpolation(
-        loanAmount: Float,
+        loanAmount: BigDecimal,
         lowerBreakpoint: Breakpoint,
         upperBreakpoint: Breakpoint
-    ): Float {
+    ): BigDecimal {
         val upperAmount = upperBreakpoint.amount
         val lowerAmount = lowerBreakpoint.amount
         val upperFee = upperBreakpoint.fee
